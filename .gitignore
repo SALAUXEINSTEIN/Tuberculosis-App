@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#flask
+venv/
+env/
+myenv/
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore configuration files with sensitive information
+config.py
