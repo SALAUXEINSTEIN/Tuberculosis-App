@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, request, jsonify
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 import numpy as np
 from flask_cors import CORS
 import pandas as pd
@@ -9,7 +9,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the model
-model = load_model('model/logistic_regression_model.h5')
+
+model = tf.keras.models.load_model('model/logistic_regression_model.h5')
 
 # Define the route for prediction
 @app.route('/predict', methods=['POST'])
