@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const MainPagePopUp = () => {
   const [formData, setFormData] = useState({
-    age: "",
+    age: 0,
     gender: "Male",
     ethnicity: "Ethnicity1",
     history_of_tb: 0,
@@ -29,15 +29,19 @@ const MainPagePopUp = () => {
   const [isloading, setIsloading] = useState(false);
 
   const handleChange = (e) => {
+    const { name, type, value } = e.target;
+  
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === 'number' ? +value : value,
     });
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsloading(true);
+    console.log(formData)
     try {
       const response = await axios.post(
         "http://127.0.0.1:5000/predict",
@@ -50,6 +54,7 @@ const MainPagePopUp = () => {
       console.error("There was an error making the prediction!", error);
     }
   };
+  
   return (
     <div className="mainPageCont">
       <div className="mainpage">
@@ -94,7 +99,7 @@ const MainPagePopUp = () => {
                     <input
                       type="number"
                       name="history_of_tb"
-                      value={formData.history_of_tb}
+                      value={+formData.history_of_tb}
                       onChange={handleChange}
                     />
                   </label>
