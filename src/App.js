@@ -1,7 +1,5 @@
 // src/App.js
-import React, { useState } from "react";
-import axios from "axios";
-import Loader from "./components/Loader";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPagePopUp from "./components/MainPagePopUp";
 import HomePage from "./pages/HomePage";

@@ -7,7 +7,7 @@ const HomePage = () => {
         <header>
             <div className="content">
                 <h1>Tuberculosis Prediction Model</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis iste voluptatem nam. Voluptatum soluta maiores, quam fuga minima illum ipsam. Ratione dolor corporis, quas excepturi quia repudiandae autem deleniti.</p>
+                <p>Predict your Tuberculosis Status.</p>
              <Link to="/tb"><button className='btn btn-home'>Check Your TB status</button></Link>
             </div>
         </header>
